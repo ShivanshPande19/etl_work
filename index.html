@@ -3,205 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eat Truck Love · Bennett University — Brand Menus</title>
+  <title>Eat Truck Love · Bennett University — Brand Menus Index</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #080808;
-      --black: #0a0a0a;
-      --red: #d02128;
-      --red-soft: #b23a3b;
-      --grey: #888888;
-      --line: rgba(255, 255, 255, 0.08);
-      --card: rgba(255, 255, 255, 0.035);
-      --card-hover: rgba(208, 33, 40, 0.10);
-    }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: #fff;
-      min-height: 100vh;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
       -webkit-font-smoothing: antialiased;
-      background-image:
-        radial-gradient(circle at 50% -10%, rgba(208, 33, 40, 0.18), transparent 55%),
-        radial-gradient(circle at 90% 100%, rgba(208, 33, 40, 0.06), transparent 45%);
     }
 
-    .wrap {
+    .page {
+      width: 100%;
       max-width: 720px;
       margin: 0 auto;
-      padding: 56px 24px 80px;
+      padding: 56px 56px 48px;
     }
 
-    /* ---------- HEADER ---------- */
-    header { text-align: center; }
+    /* ---- Header ---- */
+    .header {
+      text-align: center;
+      padding-bottom: 28px;
+      border-bottom: 3px solid #d02128;
+    }
 
     .logo {
-      width: 168px;
-      height: 168px;
-      margin: 0 auto 28px;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
       display: block;
-      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
     }
 
-    .title {
-      font-family: 'Anton SC', 'Inter', sans-serif;
-      font-size: clamp(44px, 11vw, 82px);
-      line-height: 0.9;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .title .r { color: var(--red); }
-
-    .subtitle {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey);
-      padding: 9px 18px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--card);
-    }
-    .subtitle .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 12px var(--red);
-    }
-
-    /* ---------- SECTION LABEL ---------- */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 56px 0 24px;
-      font-size: 11px;
+    .org {
+      font-size: 24px;
       font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #111;
+    }
+    .org .r { color: #d02128; }
+
+    .location {
+      margin-top: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .doc-title {
+      margin-top: 18px;
+      font-size: 15px;
+      font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--grey);
-    }
-    .section-label::before,
-    .section-label::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--line);
+      color: #d02128;
     }
 
-    /* ---------- BRANDS ---------- */
-    .brands {
+    /* ---- List ---- */
+    .list {
+      margin-top: 36px;
       list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    @media (min-width: 560px) {
-      .brands { grid-template-columns: 1fr 1fr; }
     }
 
-    .brand {
+    .item {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 18px 20px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-      cursor: default;
-    }
-    .brand:hover {
-      transform: translateY(-2px);
-      background: var(--card-hover);
-      border-color: rgba(208, 33, 40, 0.45);
+      padding: 15px 4px;
+      border-bottom: 1px solid #e6e6e6;
     }
 
-    .brand .num {
+    .item .no {
+      width: 42px;
       flex-shrink: 0;
-      width: 38px; height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: var(--red);
-      color: #fff;
-      font-weight: 900;
       font-size: 15px;
-      box-shadow: 0 6px 16px rgba(208, 33, 40, 0.35);
+      font-weight: 800;
+      color: #d02128;
     }
 
-    .brand .name {
+    .item .name {
       font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      line-height: 1.2;
+      font-weight: 600;
+      color: #1a1a1a;
     }
 
-    footer {
-      margin-top: 56px;
-      text-align: center;
+    /* ---- Footer ---- */
+    .footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #e6e6e6;
+      display: flex;
+      justify-content: space-between;
       font-size: 11px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.28);
+      color: #999;
+    }
+
+    @media print {
+      .page { padding: 40px 48px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <!-- ETL logo (SVG recreation of the Eat Truck Love · By Azimuth mark) -->
+  <div class="page">
+    <div class="header">
+      <!-- ETL logo (SVG recreation) -->
       <svg class="logo" viewBox="0 0 300 300" role="img" aria-label="Eat Truck Love by Azimuth logo">
         <circle cx="150" cy="150" r="150" fill="#b23a3b" />
-        <!-- black tilted letter boxes: E T L -->
         <g transform="rotate(-9 108 150)">
           <rect x="70" y="62"  width="76" height="56" rx="6" fill="#0a0a0a" stroke="#fff" stroke-width="3"/>
           <rect x="70" y="122" width="76" height="56" rx="6" fill="#0a0a0a" stroke="#fff" stroke-width="3"/>
           <rect x="70" y="182" width="76" height="56" rx="6" fill="#0a0a0a" stroke="#fff" stroke-width="3"/>
-          <text x="108" y="102" text-anchor="middle" font-family="Anton SC, Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">E</text>
-          <text x="108" y="162" text-anchor="middle" font-family="Anton SC, Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">T</text>
-          <text x="108" y="222" text-anchor="middle" font-family="Anton SC, Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">L</text>
+          <text x="108" y="102" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">E</text>
+          <text x="108" y="162" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">T</text>
+          <text x="108" y="222" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="42" font-weight="900" fill="#fff">L</text>
         </g>
-        <!-- word continuations -->
-        <text x="160" y="102" font-family="Anton SC, Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">AT</text>
-        <text x="160" y="163" font-family="Anton SC, Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">RUCK</text>
-        <text x="160" y="224" font-family="Anton SC, Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">OVE</text>
-        <!-- tagline -->
-        <text x="150" y="266" text-anchor="middle" font-family="Anton SC, Arial Black, sans-serif" font-size="20" letter-spacing="3" fill="#fff">BY AZIMUTH</text>
+        <text x="160" y="102" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">AT</text>
+        <text x="160" y="163" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">RUCK</text>
+        <text x="160" y="224" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" fill="#fff">OVE</text>
+        <text x="150" y="266" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="20" letter-spacing="3" fill="#fff">BY AZIMUTH</text>
       </svg>
 
-      <h1 class="title">EAT T<span class="r">R</span>UCK LOVE</h1>
-      <div class="subtitle"><span class="dot"></span>Bennett University · Brand Menus</div>
-    </header>
+      <div class="org">EAT T<span class="r">R</span>UCK LOVE</div>
+      <div class="location">Bennett University</div>
+      <div class="doc-title">Brand Menus — Index</div>
+    </div>
 
-    <div class="section-label">All Brands</div>
+    <ol class="list">
+      <li class="item"><span class="no">1.</span><span class="name">Bukhara 2 Beijing</span></li>
+      <li class="item"><span class="no">2.</span><span class="name">Bigg Bear Bites</span></li>
+      <li class="item"><span class="no">3.</span><span class="name">Bun Burger Fries</span></li>
+      <li class="item"><span class="no">4.</span><span class="name">The Coffee Vault BU</span></li>
+      <li class="item"><span class="no">5.</span><span class="name">The Chatpata Affair BU</span></li>
+      <li class="item"><span class="no">6.</span><span class="name">OG Pizza</span></li>
+      <li class="item"><span class="no">7.</span><span class="name">Koby's</span></li>
+      <li class="item"><span class="no">8.</span><span class="name">Eggspert</span></li>
+      <li class="item"><span class="no">9.</span><span class="name">The Momo Box</span></li>
+      <li class="item"><span class="no">10.</span><span class="name">Burrito Bro's</span></li>
+      <li class="item"><span class="no">11.</span><span class="name">Soul Crumb</span></li>
+    </ol>
 
-    <ul class="brands">
-      <li class="brand"><span class="num">1</span><span class="name">Bukhara 2 Beijing</span></li>
-      <li class="brand"><span class="num">2</span><span class="name">Bigg Bear Bites</span></li>
-      <li class="brand"><span class="num">3</span><span class="name">Bun Burger Fries</span></li>
-      <li class="brand"><span class="num">4</span><span class="name">The Coffee Vault BU</span></li>
-      <li class="brand"><span class="num">5</span><span class="name">The Chatpata Affair BU</span></li>
-      <li class="brand"><span class="num">6</span><span class="name">OG Pizza</span></li>
-      <li class="brand"><span class="num">7</span><span class="name">Koby's</span></li>
-      <li class="brand"><span class="num">8</span><span class="name">Eggspert</span></li>
-      <li class="brand"><span class="num">9</span><span class="name">The Momo Box</span></li>
-      <li class="brand"><span class="num">10</span><span class="name">Burrito Bro's</span></li>
-      <li class="brand"><span class="num">11</span><span class="name">Soul Crumb</span></li>
-    </ul>
-
-    <footer>Eat Truck Love · By Azimuth</footer>
+    <div class="footer">
+      <span>Eat Truck Love · By Azimuth</span>
+      <span>Bennett University</span>
+    </div>
   </div>
 </body>
 </html>
